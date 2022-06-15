@@ -1,0 +1,149 @@
+/*
+APPOLOGIES FOR HAVING FUN WITH THE TASK 
+*/
+
+:root {
+    --animation-duration: 2500ms;
+    --animation-delay: 5s;
+}
+
+body,
+html {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+body {
+    background: hsl(179, 100%, 13%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 50vw;
+    height: 50vw;
+    gap: 1rem;
+    animation: spin var(--animation-duration) ease-in-out var(--animation-delay) infinite forwards;
+}
+
+#red {
+    background-color: red;
+    grid-column: 1 / 4;
+    animation: spin-red var(--animation-duration) ease-in-out var(--animation-delay) infinite forwards;
+
+}
+
+#orange {
+    background-color: orange;
+    animation: spin-orange var(--animation-duration) ease-in-out var(--animation-delay) infinite forwards;
+
+}
+
+#green {
+    background-color: green;
+    animation: spin-green var(--animation-duration) ease-in-out var(--animation-delay) infinite forwards;
+
+}
+
+#blue {
+    grid-column: 2 / -1;
+    display: grid;
+    gap: 1rem;
+}
+
+#blue div {
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    animation: spin-blue var(--animation-duration) ease-in-out var(--animation-delay) infinite forwards;
+
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    30% {
+        transform: rotate(120deg) scale(0.5);
+    }
+
+    50% {
+        transform: rotate(45deg) scale(1);
+    }
+
+    80% {
+        transform: rotate(288deg) scale(0.5);
+    }
+
+    90% {
+        transform: rotate(260deg) scale(0.7);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+
+}
+
+
+@keyframes spin-blue {
+    30% {
+        background-color: orange;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    90% {
+        background-color: red;
+    }
+}
+
+@keyframes spin-green {
+    30% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    90% {
+        background-color: orange;
+    }
+}
+
+@keyframes spin-red {
+    30% {
+        background-color: green;
+    }
+
+    50% {
+        background-color: orange;
+    }
+
+    90% {
+        background-color: blue;
+    }
+}
+
+@keyframes spin-orange {
+    30% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    90% {
+        background-color: green;
+    }
+}
